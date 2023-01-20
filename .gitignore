@@ -1,0 +1,10 @@
+#GIT IGNORE LIST:
+
+/*.log
+temp/
+__pychache__/
+/__pychache__
+__pychache__
+/test*.*
+/other
+other/
