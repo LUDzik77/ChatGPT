@@ -1,13 +1,35 @@
 # the script  write youdescriptions of the books in the chosen genre.
 #Check it out!
 
+#import requests
+#from bs4 import BeautifulSoup
+
+##basicu url #     url = "http://books.toscrape.com/"
+##example          url = "https://books.toscrape.com/catalogue/category/books/science-fiction_16/"
+
+#url = "http://books.toscrape.com/"
+#response = requests.get(url)
+#soup = BeautifulSoup(response.content, "html.parser")
+#categories_container = soup.find("ul", class_="nav nav-list")
+#categories = categories_container.find_all("li")
+
+#list_to_show = []
+#for category in categories:
+    #if category.a["href"] == "catalogue/category/books_1/index.html": continue
+    #category_name = category.a["href"][25:-11]
+    #category_url = "http://books.toscrape.com" + category.a["href"]
+    ##print(category_url)
+    #list_to_show.append(category_name.strip())
+#print("choose category")    
+#print(" ".join(list_to_show))
+#user_category = input(" > ")
+
+
+
 import requests
 from bs4 import BeautifulSoup
 
-#basicu url #     url = "http://books.toscrape.com/"
-#example          url = "https://books.toscrape.com/catalogue/category/books/science-fiction_16/"
-
-url = "http://books.toscrape.com/"
+url = "http://books.toscrape.com"
 response = requests.get(url)
 soup = BeautifulSoup(response.content, "html.parser")
 categories_container = soup.find("ul", class_="nav nav-list")
@@ -15,12 +37,12 @@ categories = categories_container.find_all("li")
 
 list_to_show = []
 for category in categories:
-    if category.a["href"] == "catalogue/category/books_1/index.html": continue
-    category_name = category.a["href"][25:-11]
-    category_url = "http://books.toscrape.com" + category.a["href"]
-    #print(category_url)
-    list_to_show.append(category_name.strip())
-print("choose category")    
+    if category.a["href"] == "catalogue/category/books_1/index.html": 
+        continue
+    category_name = category.a["href"][25:-11].replace("_", " ").capitalize()
+    list_to_show.append(category_name)
+
+print("Choose a category:")    
 print(" ".join(list_to_show))
 user_category = input(" > ")
 

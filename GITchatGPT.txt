@@ -1,0 +1,437 @@
+
+ludwi@LUDzik MINGW64 ~
+$ cd "C:\Users\ludwi\Desktop\przygoda python\my project finished\ChatGPT\other\git z chatGPT"
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git init
+Initialized empty Git repository in C:/Users/ludwi/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT/.git/
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git touch test1.txt
+git: 'touch' is not a git command. See 'git --help'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ touch test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git commit -m "testfile added"
+[master (root-commit) 74bd58f] testfile added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git remote add orgin https://github.com/LUDzik77/git-z-chatGPT.git
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push -u orgin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 214 bytes | 214.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LUDzik77/git-z-chatGPT.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch testbranch1
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout testbranch1
+Switched to branch 'testbranch1'
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git commit -m "Made changes to test1.txt in new branch"
+On branch testbranch1
+nothing to commit, working tree clean
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git commit -m "Made changes to test1.txt in new branch"
+[testbranch1 6e454c6] Made changes to test1.txt in new branch
+ 1 file changed, 1 insertion(+)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git branch
+  master
+* testbranch1
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (testbranch1)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+  testbranch1
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge testbranch1
+Updating 74bd58f..6e454c6
+Fast-forward
+ test1.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch -d testbranch1
+Deleted branch testbranch1 (was 6e454c6).
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git commit -m "after chatGPT lesson 2"
+On branch master
+Your branch is ahead of 'orgin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 277 bytes | 138.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LUDzik77/git-z-chatGPT.git
+   74bd58f..6e454c6  master -> master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git log
+commit 6e454c6eab0fdfe480e38a326aff2f2ecf737881 (HEAD -> master, orgin/master)
+Author: Ludwik <ludwikpapaj@gmail.com>
+Date:   Sat Feb 18 16:21:06 2023 +0100
+
+    Made changes to test1.txt in new branch
+
+commit 74bd58fa6bee41c93124d2d6be1498c9be67dee4
+Author: Ludwik <ludwikpapaj@gmail.com>
+Date:   Sat Feb 18 16:12:00 2023 +0100
+
+    testfile added
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git revert 6e454c6eab0fdfe480e38a326aff2f2ecf737881
+[master 3d11486] Revert "Made changes to test1.txt in new branch"
+ 1 file changed, 1 deletion(-)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git log
+commit 3d1148644de8654666bb2e106b1c91639b1ecf57 (HEAD -> master)
+Author: Ludwik <ludwikpapaj@gmail.com>
+Date:   Sat Feb 18 16:28:29 2023 +0100
+
+    Revert "Made changes to test1.txt in new branch"
+
+    This reverts commit 6e454c6eab0fdfe480e38a326aff2f2ecf737881.
+
+commit 6e454c6eab0fdfe480e38a326aff2f2ecf737881 (orgin/master)
+Author: Ludwik <ludwikpapaj@gmail.com>
+Date:   Sat Feb 18 16:21:06 2023 +0100
+
+    Made changes to test1.txt in new branch
+
+commit 74bd58fa6bee41c93124d2d6be1498c9be67dee4
+Author: Ludwik <ludwikpapaj@gmail.com>
+Date:   Sat Feb 18 16:12:00 2023 +0100
+
+    testfile added
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 289 bytes | 144.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LUDzik77/git-z-chatGPT.git
+   6e454c6..3d11486  master -> master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git commit -m "to be removed"
+[master de90b73] to be removed
+ 1 file changed, 1 insertion(+)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git revert HEAD
+[master 7edd19d] Revert "to be removed"
+ 1 file changed, 1 deletion(-)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 434 bytes | 217.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LUDzik77/git-z-chatGPT.git
+   3d11486..7edd19d  master -> master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch new_branch1
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout new_branch1
+Switched to branch 'new_branch1'
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git checkout -b newbranch2
+Switched to a new branch 'newbranch2'
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git merge newbranch2
+Already up to date.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git merge newbranch1
+merge: newbranch1 - not something we can merge
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git branch
+  master
+  new_branch1
+* newbranch2
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git checkout main
+error: pathspec 'main' did not match any file(s) known to git
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge newbranch1
+merge: newbranch1 - not something we can merge
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+  new_branch1
+  newbranch2
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout newbranch2
+Switched to branch 'newbranch2'
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git checkoutmaster
+git: 'checkoutmaster' is not a git command. See 'git --help'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git checkout master
+Switched to branch 'master'
+M       test1.txt
+Your branch is up to date with 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge newbranch2
+Already up to date.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge newbranch1
+merge: newbranch1 - not something we can merge
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout newbranch1
+error: pathspec 'newbranch1' did not match any file(s) known to git
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+  new_branch1
+  newbranch2
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge new_branch
+merge: new_branch - not something we can merge
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge new_branch1
+Already up to date.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout new_branch1
+Switched to branch 'new_branch1'
+M       test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git checkout newbranch2
+Switched to branch 'newbranch2'
+M       test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (newbranch2)
+$ git checkout new_branch1
+Switched to branch 'new_branch1'
+M       test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git commit -m "new_branch1"
+On branch new_branch1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git push
+fatal: The current branch new_branch1 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream orgin new_branch1
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git checkout master
+Switched to branch 'master'
+M       test1.txt
+Your branch is up to date with 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git merge new_branch1
+Already up to date.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Everything up-to-date
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout test_branch1
+error: pathspec 'test_branch1' did not match any file(s) known to git
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+  new_branch1
+  newbranch2
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git checkout new_branch1
+Switched to branch 'new_branch1'
+M       test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git merge newbranch2
+Already up to date.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git branch
+  master
+* new_branch1
+  newbranch2
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git branch -D new_branch1
+error: Cannot delete branch 'new_branch1' checked out at 'C:/Users/ludwi/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT'
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git branch -D newbranch2
+Deleted branch newbranch2 (was 7edd19d).
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (new_branch1)
+$ git checkout master
+Switched to branch 'master'
+M       test1.txt
+Your branch is up to date with 'orgin/master'.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch -D newbranch2
+error: branch 'newbranch2' not found.
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+  new_branch1
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch -D new_branch1
+Deleted branch new_branch1 (was 7edd19d).
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git branch
+* master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git commit -m "after branching and removing branches"
+On branch master
+Your branch is up to date with 'orgin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test1.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Everything up-to-date
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git add test1.txt
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git commit -m "after branching and removing branches"
+[master a1141a4] after branching and removing branches
+ 1 file changed, 1 insertion(+)
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Writing objects: 100% (3/3), 285 bytes | 142.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/LUDzik77/git-z-chatGPT.git
+   7edd19d..a1141a4  master -> master
+
+ludwi@LUDzik MINGW64 ~/Desktop/przygoda python/my project finished/ChatGPT/other/git z chatGPT (master)
+$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
