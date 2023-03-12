@@ -14,6 +14,7 @@ control +l    = CLEAR
 find -iname '*test*'                           SZUKA REKURSYWNIE (W SUBFOLDERACH)
 find -iname '*test*' | wc -l                   ...I DODAJE LICZBĘ LINII
 find -iname '*test*' | wc -l >../lista.txt     ...I ZAPISUJE W PLIKU  
+find ./ -name "*.txt" | xargs grep test        SZUKA PLIKÓW TXT REKURSYWNIE I SZUKA W NICH LINII Z "test"
 find -name 'lista.txt."       TO JAK PRZENOSIMY PLIK 1
 dostajemy <tu adres listy>    TO JAK PRZENOSIMY PLIK 2
 mv <tu adres listy> .         TO JAK PRZENOSIMY PLIK 3 (mv <co>  <gdzie>)
@@ -37,5 +38,10 @@ cp test.txt ./TEST2/copytest.txt      KOPIUJE PLIK POD NAZWĄ copytest.txt w TES
 man					WYŚWIETLA MANUAL (nie zawsze działa; ;lepiej <command> --help
 nano test.txt                 OTWIERA EDYTOR GNU. shift+ctr+x = WYJŚCIE
 echo "newcontent" >test.txt   NADPISUJE ZAWARTOŚĆ PLIKU
+./skrypt.sh				URUCHOM skrypt.sh
+history | grep test		WYŚWIETLA HISTORIĘ POLECEŃ ze słowem "test"
+head -n 5 test.txt            WYŚWIETLA 5 PIERWSZYCH LINII
+tail -n 5 test.txt		WYŚWIETLA 5 OSTATNICH LINII
+cp -r ROZPAKOWANE TEST2		SKOPIUJ FOLDER ROZPAKOWANE DO FOLDERU TEST2
 
 CTR + SHIFT + C       CTR + SHIFT + V      kopiowanie i wklejanie w Linuxie /zazwyczaj/
