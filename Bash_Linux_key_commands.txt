@@ -1,0 +1,41 @@
+ls costam*                      WYSWIETLA DOPASOWANE DO WZORCA   /przydatne np :  ls *.py     
+ls |grep poczatek*              WYŚWIETLA WSZYSTKO Z WZORCEM początek*
+ls -l                           WYŚWIETLA PRAWA DOSTĘPU / wlasciciel/ grupa/ kilobajty / czas edycji / nazwa
+cd <napisz kawałek> + TAB       AUTOUZUPEŁNIENIE
+mkir test                       TWORZY FODLER
+rm test                         USUWA TYLKO JESLI PUSTY
+rm test -rf                     RECURSYWNIE FORCE - USUWA WSZYSTKO
+touch test.txt                  TWORZY PLIK
+cat test.txt                    PODGLĄDA ZAWARTOŚĆ
+less   test.txt                 ...Z KURSOREM - wychodzimy za pomocą Q
+wc -l test.txt                  LICZY LINIE  -W   LICZY SLOWA 
+--help                          UŻYWAĆ :)
+control +l    = CLEAR
+find -iname '*test*'                           SZUKA REKURSYWNIE (W SUBFOLDERACH)
+find -iname '*test*' | wc -l                   ...I DODAJE LICZBĘ LINII
+find -iname '*test*' | wc -l >../lista.txt     ...I ZAPISUJE W PLIKU  
+find -name 'lista.txt."       TO JAK PRZENOSIMY PLIK 1
+dostajemy <tu adres listy>    TO JAK PRZENOSIMY PLIK 2
+mv <tu adres listy> .         TO JAK PRZENOSIMY PLIK 3 (mv <co>  <gdzie>)
+chmod -rw skrypt.sh           DODANIE DO PERMISSIONS exekucji 
+gzip lista.txt                ZIPOWANIE
+funzip lista.txt.gz           UNZIPOWANIE
+tar -czpf ./paczka.tar.gz ./  SKLEJ i ZAPISZ
+(-CREATE+ZIP+UWZGLĘNIJ PRAWA DOSTĘPU+ZAPISZ JAKO PACZKA.TAR.GZ I ZAPISZ W BIEŻĄCYM FOLDERZE)
+tar -ztf paczka.tar.gz        PRZEGLĄDAJ TARA
+tar -ztf paczka.tar.gz|less   PRZEGLĄDAJ TARA z KURSOREM
+tar -zxf paczka.tar.gz        ROZPAKUJ
+grep -E '\.py$' TesTt.txt     WYSZUKAJ  nazwy kończączące sie na .py  w pliku
+grep -E '^T+T$' TesTt.txt     WYSZUKAJ  nazwy zaczynające się i kończące na T
+ls|grep test                  WYSZUKAJ TO CO MA TEST W NAZWIE
+ls|grep -vi test              WYSZUKAJ TO CO NIE MA TEST W NAZWIE + NOT CASE SENSITIVE
+ls|sort -r                    WYLISTUJ OD Z
+ls|grep -vi test |sort -r     WYLISTUJ OD Z BEZ "TEST" + NOT CASE SENSITIVE\
+pwd					PRINT WORKING DIRECTORY
+cd /					PRZENOSI DO ROOT DIRECTORY
+cp test.txt ./TEST2/copytest.txt      KOPIUJE PLIK POD NAZWĄ copytest.txt w TEST2
+man					WYŚWIETLA MANUAL (nie zawsze działa; ;lepiej <command> --help
+nano test.txt                 OTWIERA EDYTOR GNU. shift+ctr+x = WYJŚCIE
+echo "newcontent" >test.txt   NADPISUJE ZAWARTOŚĆ PLIKU
+
+CTR + SHIFT + C       CTR + SHIFT + V      kopiowanie i wklejanie w Linuxie /zazwyczaj/
