@@ -418,7 +418,20 @@ $
 
 
 
-
+////////////////////////////////
+git status       		POKAZUJE STAGE'A
+git reset 	     		USUWA ZE STAGE'a (ostrożnie- zmienia historie)
+git checkout --plik.txt	USUWA PLIK ZE STAGE'a
+git clean -idf   		USUWA NIEŚLEDZONE PLIKI I FOLDERY
+git rm -f plik.txt	LUBI DAWAĆ FATALA BEZ -F
+git log --oneline       COMMITY ZLISTOWANE
+git checkout <hash_Commitu> <plik>  POZWALA WRÓCIĆ DO STAREJWERSJI PLIKU
+git checkout -b <new_branch_name>
+git revert <hash_Commitu>
+:q   + ENTER            WYJŚCIE Z KONSOLI VIM
+STASH - stos do odkładania "na później"
+fork/clone/robimy branch/commit+push/pull request do właściciela repo/sprzątamy
+git remote -v		CHECK IF ORGIN IS SET
 
 
 
