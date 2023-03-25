@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Skrypt z "Wyborczej"</title>
+	<style>
+		/* ... */
+		
+		body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+p {
+	text-align: center;
+	margin-top: 10px;
+}
+
+label {
+	display: block;
+	margin: 20px auto 10px;
+	width: fit-content;
+}
+
+input[type="number"] {
+	display: block;
+	margin: 0 auto;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 16px;
+}
+
+button {
+	display: block;
+	margin: 20px auto 10px;
+	padding: 5px 10px;
+	border: none;
+	border-radius: 3px;
+	background-color: #4CAF50;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+ul {
+	margin: 20px auto;
+	padding: 0;
+	list-style: none;
+}
+
+li {
+	margin: 10px 0;
+	padding: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0,0,0,0.1);
+	border-radius: 3px;
+}
+
+li:hover {box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+li a {
+color: #000;
+text-decoration: none;
+}
+
+li a:hover {
+text-decoration: underline;
+}
+
+		
+		
+	</style>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/cheerio/lib/cheerio.js"></script>
+</head>
+<body>
+	<h1>Skrypt z "Wyborczej"</h1>
+	<p>Data aktualizacji bazy danych: <span id="data"></span></p>
+	<p>Liczba ostatnich interpelacji: <input type="number" id="liczba-interpelacji" value="10"> <button id="pokaz-btn">Pokaż</button></p>
+	<ul id="interpelacje-lista"></ul>
+	<script>
+		/* Skrypt JavaScript */
+		
+const url = 'https://www.sejm.gov.pl/sejm9.nsf/interpelacje.xsp?view=1';
+
+const dataEl = document.getElementById('data');
+const liczbaInterpelacjiEl = document.getElementById('liczba-interpelacji');
+const pokazBtn = document.getElementById('pokaz-btn');
+const interpelacjeLista = document.getElementById('interpelacje-lista');
+
+function formatDate(date) {
+	const day = date.getDate().toString().padStart(2, '0');
+	const month = (date.getMonth() + 1).toString().padStart(2, '0');
+	const year = date.getFullYear();
+	return `${day}.${month}.${year}`;
+}
+
+function showInterpelacje() {
+	const liczbaInterpelacji = parseInt(liczbaInterpelacjiEl.value);
+	if (!liczbaInterpelacji || liczbaInterpelacji < 1) {
+		alert('Proszę podać poprawną liczbę interpelacji');
+		return;
+	}
+	axios.get(url).then(response => {
+		const $ = cheerio.load(response.data);
+		const rows = $('table#interpelacje > tbody > tr').slice(0, liczbaInterpelacji);
+		interpelacjeLista.innerHTML = '';
+		rows.each((i, row) => {
+			const $row = $(row);
+			const tytul = $row.find('td:nth-child(2) > a').text().trim();
+			const data = $row.find('td:nth-child(4)').text().trim();
+			const link = $row.find('td:nth-child(2) > a').attr('href');
+			const li = document.createElement('li');
+			const a = document.createElement('a');
+			a.href = link;
+			a.textContent = `${tytul} (${formatDate(new Date(data))})`;
+			li.appendChild(a);
+			interpelacjeLista.appendChild(li);
+		});
+		dataEl.textContent = formatDate(new Date());
+	}).catch(error => {
+		console.error(error);
+		alert('Wystąpił błąd podczas pobierania danych z serwera');
+	});
+}
+pokazBtn.addEventListener('click', showInterpelacje);
+		
+		
+		
+	</script>
+</body>
+</html>
