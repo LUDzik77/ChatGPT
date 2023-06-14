@@ -1,4 +1,3 @@
-from random import choice
 # I ignore interfaces, just implementation
 
 class Dog():
@@ -26,7 +25,6 @@ class AnimalLocalFactory():
         else:
             return Cat()    
 
-# Usage
 if __name__ == "__main__":
     dog_factory = DogFactory()
     dog = dog_factory.create_animal()
