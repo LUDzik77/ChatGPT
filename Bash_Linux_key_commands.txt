@@ -45,3 +45,35 @@ tail -n 5 test.txt		WYŚWIETLA 5 OSTATNICH LINII
 cp -r ROZPAKOWANE TEST2		SKOPIUJ FOLDER ROZPAKOWANE DO FOLDERU TEST2
 
 CTR + SHIFT + C       CTR + SHIFT + V      kopiowanie i wklejanie w Linuxie /zazwyczaj/
+
+//////////////////repetition
+
+ls <dir>  --> lists without moving from directory
+ls -all   --> show list the dir with previlages
+cd ..     --> move one level top
+/         --> root directory
+mkdir  NAMEfolder/newfolder/nextfolder -p    --->let us create the directories in the provided path
+mv tesfile testfile.txt     ---> renaming
+tail copied.txt -f          ---> show new lines in real time (to view logs)
+date >> copied.txt          ---> append file with a current date
+ls -l >> tableofcontent.txt ---> creates dir table of content
+ls -l | wc                  ---> count words/characters/bytes of directory file
+cat file1 file2 | sort      ---> sorts lines form 2 files
+sort file1 | uniq           ---> sort unique files
+sort fruit.txt | uniq -c    ---> ...and count the occurance
+sort fruit.txt | uniq -c | sort -nr   ---> ... and sort by numbers
+echo *.txt                  ---> show all txt files
+echo ????                   ---> show all 4-long resources
+touch Day{1..365}.txt       ---> creates a file for each day in the year
+diff -u file1original file1changed    ---> GIT-style file changes comparison
+find . -type d	-name 'text*'		  ---> gives all the directories
+find . -type f -size -1k              ---> returns small (empty) files
+grep -R app							  ---> find all the line with "app" in direcory (inside of the files or in names)
+how to use history: memorise index nr of the command you are interested.  ie:
+history | grep 'cookie'
+!nrofcommand                ----> run the command under the number
+ps ax                       ----> show all the processes (all the users)
+gzip -k filename			----> zip a file using gzip algo and KEEP the original file
+tar -cf myTARfile.tar file.txt file2.txt                   ---> create archieve of files
+tar -cf myTARfileTEST copied.txt copied2.txt | gzip -f     ---> same, but zipped
+alias mytest='mkdir Folder1 Folder2'                       ---> create a shortcut to command
